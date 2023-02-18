@@ -98,10 +98,8 @@
     button = circle()
     button2 = circle2()
 
-    
     document.body.style.backgroundColor = randomColor();
 
-    
     const container = document.querySelector('.container');
     container.appendChild(button);
     container.appendChild(button2);
@@ -123,8 +121,8 @@
     let button2Row = Math.floor(Math.random() * 3) + 1
     let button2Col = Math.floor(Math.random() * 3) + 1
     while (button2Row === buttonRow && button2Col === buttonCol) {
-      button2Row = Math.floor(Math.random() * 3) + 1
-      button2Col = Math.floor(Math.random() * 3) + 1
+      button2Row = Math.floor (Math.random() * 3) + 1
+      button2Col = Math.floor (Math.random() * 3) + 1
     }
     button2.style.gridRow = `${button2Row}`
     button2.style.gridColumn = `${button2Col}`
