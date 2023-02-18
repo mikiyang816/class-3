@@ -56,4 +56,59 @@
     return ele
   }
 
+  function b1Down(e) {
+    button.style.backgroundColor = 'lightyellow'
+  }
+
+  function b1Up(e) {
+    button.style.backgroundColor = 'lightblue'
+  }
+
+  function b2Down(e) {
+    button2.style.backgroundColor = 'pink'
+  }
+
+  function b2Up(e) {
+    button2.style.backgroundColor = 'lightgreen'
+  }
+
+  function playLowTone() {
+    // create a tone.js "synth"
+    const synth = new Tone.Synth().toDestination()
+    const now = Tone.now()
+    // trigger the sound for the length of an 8th note
+    synth.triggerAttackRelease('C4', '8n', now)
+    synth.triggerAttackRelease("E4", "8n", now + 0.5)
+    synth.triggerAttackRelease("G4", "8n", now + 1)
+  }
+
+  function playHighTone() {
+    // create a tone.js "synth"
+    const synth = new Tone.Synth().toDestination()
+    const now = Tone.now()
+    // trigger the sound for the length of an 8th note
+    synth.triggerAttackRelease('C5', '8n', now)
+    synth.triggerAttackRelease("E5", "8n", now + 0.5)
+    synth.triggerAttackRelease("G5", "8n", now + 1)
+  }
+
+  function setup() {
+    button = circle()
+    button2 = circle2()
+
+    
+    document.body.style.backgroundColor = randomColor();
+
+    
+    const container = document.querySelector('.container');
+    container.appendChild(button);
+    container.appendChild(button2);
+
+    button.addEventListener('mouseup', b1Up)
+    button.addEventListener('mousedown', b1Down)
+    button.addEventListener('click', playLowTone)
+    button2.addEventListener('mouseup', b2Up)
+    button2.addEventListener('mousedown', b2Down)
+    button2.addEventListener('click', playHighTone)
+
 </script>
