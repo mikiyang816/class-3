@@ -6,3 +6,54 @@
     height: 60vh;
   }
 </style>
+
+<div class="grid-wrapper">
+  <h1 style="font-family: courier;color:white;text-align: center;">Tone Visualization</h1>
+  <div style="font-family: courier">Small dot represents for 3 low notes. Large dot represents for 3 high notes.</div>
+
+  <div class="container"></div>
+</div>
+<script src="https://tonejs.github.io/build/Tone.js"></script>
+
+
+</div>
+<script> 
+  //Visualize Sound by Miki Yang, Feb 16
+  //I want to explore the element of randomness comes into the interactions between sound and visuals.  
+  //The positions for the low and high buttons (button and button 2) will randomly are random each time the page is refreshed. The background color will also change randomly.
+  function randomColor() {
+    const r = Math.random() * 255
+    const g = Math.random() * 255 //g for green
+    const b = Math.random() * 255 //b for blue
+    const color = `rgb(${r}, ${g}, ${b})`
+    return color // you have to return to let the randomColor () render
+  }
+
+  function circle() {
+    const ele = document.createElement('div')
+    ele.style.width = '80px'
+    ele.style.height = '80px'
+    ele.style.borderRadius = '50%'
+    ele.style.backgroundColor = 'lightblue'
+    ele.textContent = 'Low'
+    ele.style.color = 'white'
+    ele.style.fontFamily = 'courier'
+    ele.style.textAlign = 'center'
+    ele.style.lineHeight = '80px'
+    return ele
+  }
+
+  function circle2() {
+    const ele = document.createElement('div')
+    ele.style.width = '120px'
+    ele.style.height = '120px'
+    ele.style.borderRadius = '50%'
+    ele.style.backgroundColor = 'lightgreen'
+    ele.textContent = 'High'
+    ele.style.fontFamily = 'courier'
+    ele.style.textAlign = 'center'
+    ele.style.lineHeight = '120px'
+    return ele
+  }
+
+</script>
